@@ -2,347 +2,297 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tema 3 · Ejercicio 03 | Plan del equipo front-end</title>
-
-    <!-- Fuentes y bibliotecas externas trabajadas en clase -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-      integrity="sha512-V0bM8Vc5xSMCfUoGboGUz4ET5czIfhUui3K0pEwAiRJ8QIx8WTx2DhP4ZBGj9FK9Q4nR94mM5Vd8Ga5sM2V0A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-      integrity="sha384-Vn0ZC1XUd5wNjq88FbjVSTnZCzzniA4jznmGQ3G3i3wPtBYVBANjFuAoQ0P5R6Ay"
-      crossorigin="anonymous"
-    />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 2 · Ejercicio 02 | Hoja de estilos base</title>
     <style>
       :root {
-        --color-principal: #0b3d91;
-        --color-secundario: #ff6b6b;
-        --color-fondo: #f5f7fb;
+        --color-fondo: #f3f4f6;
+        --color-primario: #1f2937;
+        --color-secundario: #2563eb;
+        --color-resalte: #fbbf24;
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       body {
-        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        margin: 0;
+        font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+        color: var(--color-primario);
         background: var(--color-fondo);
-        color: #1f2933;
+        line-height: 1.6;
       }
 
-      code,
-      pre {
-        font-family: "Fira Code", "Courier New", monospace;
+      header {
+        background: linear-gradient(135deg, #1f2937, #111827);
+        color: white;
+        padding: 3rem 1.5rem;
       }
 
-      .encabezado {
-        background: linear-gradient(135deg, rgba(11, 61, 145, 0.9), rgba(255, 107, 107, 0.8));
+      .contenedor {
+        width: min(960px, 90vw);
+        margin: 0 auto;
       }
 
       .etiqueta {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.35rem 0.75rem;
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0.25rem 0.75rem;
         border-radius: 999px;
         font-size: 0.9rem;
-        background: rgba(255, 255, 255, 0.15);
-        color: #fff;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
-      .paso::marker {
-        color: var(--color-principal);
-        font-weight: 600;
+      h1 {
+        margin-top: 1rem;
+        font-size: clamp(2rem, 4vw, 2.75rem);
+      }
+
+      main {
+        padding: 3rem 1.5rem 4rem;
+      }
+
+      section {
+        background: white;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        border-radius: 1.25rem;
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+      }
+
+      section h2 {
+        margin-top: 0;
+        color: var(--color-secundario);
+        font-size: 1.4rem;
+      }
+
+      section p {
+        margin-bottom: 1rem;
+      }
+
+      ul,
+      ol {
+        padding-left: 1.25rem;
+      }
+
+      ul li,
+      ol li {
+        margin-bottom: 0.5rem;
       }
 
       .nota-profesor {
-        border-left: 4px solid var(--color-secundario);
-        background: #fff;
-        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-      }
-
-      .tarjeta-equipo {
-        border: none;
+        border-left: 4px solid var(--color-resalte);
+        background: #fff8e6;
+        padding: 1.25rem;
         border-radius: 1rem;
-        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
       }
 
-      .tarjeta-equipo img {
-        width: 160px;
-        height: 160px;
-        object-fit: cover;
+      .paleta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
       }
 
-      .tabla-bibliotecas tbody tr {
-        transition: transform 200ms ease, box-shadow 200ms ease;
+      .color {
+        border-radius: 1rem;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+        background: #f9fafb;
       }
 
-      .tabla-bibliotecas tbody tr:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+      .color span {
+        display: block;
+        padding: 1rem;
+        font-weight: 600;
       }
 
-      .checklist .list-group-item {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
+      .color strong {
+        display: block;
+        font-size: 0.85rem;
+        margin-top: 0.25rem;
+        font-weight: 500;
+        color: #4b5563;
+      }
+
+      pre {
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        overflow-x: auto;
+      }
+
+      code {
+        font-family: "Fira Code", "Courier New", monospace;
+        font-size: 0.95rem;
+      }
+
+      .grid-ejemplo {
+        display: grid;
+        gap: 1rem;
+        margin: 1.5rem 0 0;
+      }
+
+      .grid-ejemplo article {
+        background: #eff6ff;
+        border-radius: 1rem;
+        padding: 1.25rem;
+        border: 1px solid #bfdbfe;
       }
 
       footer {
-        background: #0f172a;
-        color: #e2e8f0;
+        text-align: center;
+        padding: 2rem 1.5rem 3rem;
+        color: #6b7280;
+        font-size: 0.95rem;
+      }
+
+      @media (min-width: 768px) {
+        .grid-ejemplo {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
     </style>
   </head>
   <body>
-    <header class="encabezado text-white py-5 shadow-sm">
-      <div class="container-lg">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-8">
-            <span class="etiqueta animate__animated animate__fadeInDown"><i class="bi bi-journal-code"></i> Tema 3 · Ejercicio 03</span>
-            <h1 class="display-5 fw-bold mt-3 animate__animated animate__fadeInLeft">
-              Plan de trabajo del equipo front-end (Enrique Feria &amp; Pedro Vila)
-            </h1>
-            <p class="fs-5 mt-3 animate__animated animate__fadeInUp animate__delay-1s">
-              Este documento sigue la estructura del material de clase: partimos de los objetivos, fijamos las bibliotecas que
-              el profesor nos pidió practicar y cerramos con un prototipo sencillo reutilizando la maqueta del ejercicio 01.
-            </p>
-          </div>
-          <div class="col-lg-4 text-lg-end text-center animate__animated animate__zoomIn animate__delay-1s">
-            <i class="bi bi-easel2-fill display-1"></i>
-            <p class="mt-3 mb-0 fw-semibold">Versión guía para principiantes</p>
-          </div>
-        </div>
+    <header>
+      <div class="contenedor">
+        <span class="etiqueta">Tema 2 · Ejercicio 02</span>
+        <h1>Hoja de estilos base para nuestra página de perfil</h1>
+        <p>
+          Seguimos exactamente el guion de clase: reutilizamos el HTML del ejercicio 01 y añadimos la capa de estilos que el
+          profesor explicó en el Tema 2 para practicar selectores, cajas flexibles y jerarquía visual.
+        </p>
       </div>
     </header>
 
-    <main class="container-lg py-5">
-      <section class="mb-5">
-        <h2 class="h4 text-uppercase text-primary fw-bold">1. Objetivo didáctico</h2>
-        <p>
-          Comprender cómo organizar el entregable del <strong>Tema 3 · Ejercicio 03</strong>: describimos al equipo de trabajo,
-          definimos el plan de aprendizaje y demostramos el uso de bibliotecas externas en un prototipo estático.
-        </p>
-        <div class="nota-profesor rounded-4 p-4 mt-4">
-          <h3 class="h5 fw-semibold"><i class="bi bi-lightbulb"></i> Nota del profesor</h3>
-          <p class="mb-2">
-            «Reutilizad el HTML del ejercicio anterior y añadid las bibliotecas nuevas. No hace falta complicarse, pero sí dejar
-            claro qué problema resuelve cada herramienta».
+    <main>
+      <div class="contenedor">
+        <section>
+          <h2>1. Qué pide el enunciado</h2>
+          <p>
+            El objetivo es transformar la página de presentación del ejercicio 01 en una maqueta cuidada aplicando los
+            fundamentos de CSS vistos en el Tema 2:
           </p>
-          <p class="mb-0 small text-secondary">Recuerda: siempre puedes volver a los apuntes en la carpeta <code>teoria/</code>.</p>
-        </div>
-      </section>
-
-      <section class="mb-5">
-        <h2 class="h4 text-uppercase text-primary fw-bold">2. Bibliotecas que practicamos</h2>
-        <p>
-          Igual que en clase, las enlazamos mediante CDNs para no instalar nada. Mantén conexión a Internet cuando abras la
-          página.
-        </p>
-        <div class="table-responsive rounded-4 shadow-sm">
-          <table class="table table-hover align-middle mb-0 tabla-bibliotecas">
-            <thead class="table-dark">
-              <tr>
-                <th scope="col">Biblioteca</th>
-                <th scope="col">¿Para qué la usamos?</th>
-                <th scope="col">CDN</th>
-              </tr>
-            </thead>
-            <tbody class="table-group-divider">
-              <tr>
-                <th scope="row"><i class="bi bi-bootstrap-fill text-primary"></i> Bootstrap 5</th>
-                <td>Estructurar la cuadrícula, tarjetas y tablas sin escribir CSS desde cero.</td>
-                <td><code>cdn.jsdelivr.net/npm/bootstrap</code></td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="bi bi-type"></i> Google Fonts</th>
-                <td>Aplicar las tipografías <em>Poppins</em> y <em>Fira Code</em> tal como aparece en los apuntes.</td>
-                <td><code>fonts.googleapis.com</code></td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="bi bi-stars text-warning"></i> Animate.css</th>
-                <td>Dar animaciones suaves al entrar el contenido (presentación del plan).</td>
-                <td><code>cdnjs.cloudflare.com/ajax/libs/animate.css</code></td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="bi bi-emoji-smile"></i> Bootstrap Icons</th>
-                <td>Incorporar iconos explicativos en encabezados y listas.</td>
-                <td><code>cdn.jsdelivr.net/npm/bootstrap-icons</code></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="mb-5">
-        <h2 class="h4 text-uppercase text-primary fw-bold">3. Estructura base reutilizada</h2>
-        <p>
-          Partimos del <strong>header → main → footer</strong> del ejercicio 01. A continuación mostramos la versión resumida del
-          HTML base para que la puedas comparar con tus apuntes.
-        </p>
-        <pre class="bg-dark text-white rounded-4 p-4 shadow-sm"><code>&lt;header&gt; Presentación del equipo &lt;/header&gt;
-&lt;main&gt;
-  &lt;section&gt; Objetivos y roles &lt;/section&gt;
-  &lt;section&gt; Plan de aprendizaje &lt;/section&gt;
-  &lt;section&gt; Recursos y enlaces &lt;/section&gt;
-&lt;/main&gt;
-&lt;footer&gt; Contacto y recordatorios &lt;/footer&gt;</code></pre>
-        <p class="mt-3">
-          Sobre este esqueleto añadimos componentes de Bootstrap para maquetar columnas y tarjetas. Esto facilita centrarnos en
-          el contenido pedagógico.
-        </p>
-      </section>
-
-      <section class="mb-5">
-        <h2 class="h4 text-uppercase text-primary fw-bold">4. Desarrollo paso a paso</h2>
-        <ol class="ps-3">
-          <li class="paso mb-3">
-            <strong>Analizar la teoría.</strong> Revisa el Tema 3 y localiza el apartado «Exercise 03». Resume los puntos clave
-            (roles del equipo, fases y entregables).
-          </li>
-          <li class="paso mb-3">
-            <strong>Importar bibliotecas.</strong> Copia las etiquetas <code>&lt;link&gt;</code> del bloque anterior en el
-            <code>&lt;head&gt;</code>.
-          </li>
-          <li class="paso mb-3">
-            <strong>Maquetar el contenido.</strong> Usa contenedores <code>.container</code> y el sistema de columnas de Bootstrap
-            para organizar la información en filas.
-          </li>
-          <li class="paso mb-3">
-            <strong>Dar estilo mínimo.</strong> Añade variables CSS en <code>:root</code> como hicimos en clase para definir colores
-            coherentes.
-          </li>
-          <li class="paso">
-            <strong>Revisar accesibilidad.</strong> Comprueba que las imágenes tengan <code>alt</code>, que los encabezados sigan un
-            orden lógico y que el contraste sea alto.
-          </li>
-        </ol>
-      </section>
-
-      <section class="mb-5">
-        <h2 class="h4 text-uppercase text-primary fw-bold">5. Prototipo del equipo</h2>
-        <div class="row g-4">
-          <div class="col-lg-6">
-            <article class="card tarjeta-equipo h-100">
-              <div class="card-body p-4">
-                <div class="d-flex flex-column flex-sm-row align-items-center gap-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=300&q=80"
-                    alt="Integrante del equipo trabajando en un portátil"
-                    class="rounded-circle border border-4 border-white shadow"
-                  />
-                  <div>
-                    <h3 class="h5 fw-bold mb-1">Enrique Feria</h3>
-                    <p class="text-secondary mb-2">Líder de maquetación</p>
-                    <ul class="list-unstyled small mb-0">
-                      <li><i class="bi bi-check-circle text-success"></i> Se encarga de HTML semántico.</li>
-                      <li><i class="bi bi-check-circle text-success"></i> Define la estructura responsive.</li>
-                      <li><i class="bi bi-check-circle text-success"></i> Supervisa el control de versiones.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </article>
+          <ul>
+            <li>Crear una hoja de estilos que defina tipografía, colores base y espaciados consistentes.</li>
+            <li>Organizar el contenido principal con un contenedor centrado y secciones bien diferenciadas.</li>
+            <li>Utilizar <strong>Flexbox o Grid sencillo</strong> para distribuir bloques como intereses o datos de contacto.</li>
+            <li>Respetar la semántica del HTML original (cabecera, secciones, pie de página) sin añadir scripts.</li>
+          </ul>
+          <div class="nota-profesor">
+            <strong>Recordatorio del profesor:</strong> «No hace falta inventar nada nuevo. Copiad el HTML del ejercicio 01,
+            enlazad vuestro CSS y comprobad que el diseño se adapta a móvil y escritorio ajustando márgenes y tamaños de
+            letra.»
           </div>
-          <div class="col-lg-6">
-            <article class="card tarjeta-equipo h-100">
-              <div class="card-body p-4">
-                <div class="d-flex flex-column flex-sm-row align-items-center gap-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80"
-                    alt="Integrante del equipo revisando notas"
-                    class="rounded-circle border border-4 border-white shadow"
-                  />
-                  <div>
-                    <h3 class="h5 fw-bold mb-1">Pedro Vila</h3>
-                    <p class="text-secondary mb-2">Responsable de investigación</p>
-                    <ul class="list-unstyled small mb-0">
-                      <li><i class="bi bi-check-circle text-success"></i> Documenta bibliotecas y recursos.</li>
-                      <li><i class="bi bi-check-circle text-success"></i> Redacta el plan de aprendizaje.</li>
-                      <li><i class="bi bi-check-circle text-success"></i> Prepara las demos para clase.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="mb-5">
-        <h2 class="h4 text-uppercase text-primary fw-bold">6. Plan de aprendizaje</h2>
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="p-4 rounded-4 shadow-sm bg-white h-100">
-              <h3 class="h5 fw-semibold"><i class="bi bi-calendar-check"></i> Cronograma semanal</h3>
-              <ul class="list-unstyled mb-0 small">
-                <li><strong>Lunes:</strong> Repaso de teoría y planificación (45&nbsp;min).</li>
-                <li><strong>Miércoles:</strong> Práctica con componentes de Bootstrap (60&nbsp;min).</li>
-                <li><strong>Viernes:</strong> Correcciones y subida al repositorio (30&nbsp;min).</li>
-              </ul>
+        <section>
+          <h2>2. Paso a paso recomendado en clase</h2>
+          <ol>
+            <li>Crear un archivo <code>style.css</code> (o usar un bloque <code>&lt;style&gt;</code> como en este ejemplo).</li>
+            <li>Definir colores y tipografías globales con variables CSS para mantener coherencia.</li>
+            <li>Añadir un contenedor central con <code>max-width</code> y márgenes automáticos.</li>
+            <li>Aplicar <code>display: flex</code> o <code>grid</code> a las secciones que contengan listas o tarjetas.</li>
+            <li>Usar <code>@media queries</code> sencillas para mejorar la lectura en pantallas grandes.</li>
+            <li>Revisar contraste, jerarquía de titulares y espaciados antes de entregar.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>3. Guía visual y paleta propuesta</h2>
+          <p>
+            Puedes seguir esta referencia de colores y estructura para mantener el estilo uniforme con el resto del equipo.
+          </p>
+          <div class="paleta">
+            <div class="color">
+              <span style="background: #1f2937; color: #f9fafb">#1F2937</span>
+              <strong>Cabeceras y textos fuertes</strong>
+            </div>
+            <div class="color">
+              <span style="background: #2563eb; color: #e0f2fe">#2563EB</span>
+              <strong>Enlaces y acentos</strong>
+            </div>
+            <div class="color">
+              <span style="background: #fbbf24; color: #1f2937">#FBBF24</span>
+              <strong>Notas y llamadas de atención</strong>
+            </div>
+            <div class="color">
+              <span style="background: #f3f4f6; color: #1f2937">#F3F4F6</span>
+              <strong>Fondo general</strong>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="p-4 rounded-4 shadow-sm bg-white h-100">
-              <h3 class="h5 fw-semibold"><i class="bi bi-journal-check"></i> Evidencias</h3>
-              <p class="small mb-2">Para entregar en clase:</p>
-              <ul class="small mb-0">
-                <li>HTML validado con encabezados ordenados.</li>
-                <li>Lista de bibliotecas y enlaces de referencia.</li>
-                <li>Captura de pantalla del prototipo en escritorio y móvil.</li>
-              </ul>
-            </div>
+          <div class="grid-ejemplo">
+            <article>
+              <h3>Cabecera</h3>
+              <p>Incluye el título principal y una breve descripción. Usa un fondo oscuro y texto claro.</p>
+            </article>
+            <article>
+              <h3>Sección "Sobre nosotros"</h3>
+              <p>Combina imagen y texto. Puedes usar <code>display: grid</code> con dos columnas a partir de 768px.</p>
+            </article>
+            <article>
+              <h3>Lista de intereses</h3>
+              <p>Transforma la lista en tarjetas con bordes suaves para que cada punto destaque.</p>
+            </article>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="mb-5">
-        <h2 class="h4 text-uppercase text-primary fw-bold">7. Checklist final antes de entregar</h2>
-        <ul class="list-group list-group-flush rounded-4 shadow-sm checklist">
-          <li class="list-group-item">
-            <i class="bi bi-clipboard-check text-success"></i>
-            He enlazado todas las bibliotecas y comprobado que se cargan en el navegador.
-          </li>
-          <li class="list-group-item">
-            <i class="bi bi-clipboard-check text-success"></i>
-            El contenido explica claramente roles, plan de aprendizaje y bibliotecas como en los apuntes.
-          </li>
-          <li class="list-group-item">
-            <i class="bi bi-clipboard-check text-success"></i>
-            El código está indentado y con etiquetas semánticas.
-          </li>
-          <li class="list-group-item">
-            <i class="bi bi-clipboard-check text-success"></i>
-            Guardé el archivo y lo subí al repositorio con un mensaje de commit descriptivo.
-          </li>
-        </ul>
-      </section>
+        <section>
+          <h2>4. Ejemplo de código explicado en clase</h2>
+          <p>
+            Este fragmento resume las propiedades clave que deberías tener en tu hoja de estilos. Adáptalo a tus propios
+            colores y tamaños.
+          </p>
+          <pre><code>body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
+  margin: 0;
+}
+
+main section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.intereses {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .intereses {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</code></pre>
+        </section>
+
+        <section>
+          <h2>5. Checklist antes de entregar</h2>
+          <ul>
+            <li>La página se sigue viendo bien al reducir la ventana por debajo de 480px.</li>
+            <li>Los encabezados mantienen la jerarquía <code>h1</code> → <code>h2</code> → <code>h3</code>.</li>
+            <li>Los colores tienen contraste suficiente (usa la herramienta recomendada en clase si dudas).</li>
+            <li>No hay estilos inline que rompan la consistencia con el resto del equipo.</li>
+            <li>El archivo está guardado en <code>exercises/02/index.html</code> y enlaza correctamente la hoja de estilos.</li>
+          </ul>
+        </section>
+      </div>
     </main>
 
-    <footer class="py-4 mt-5">
-      <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-        <div>
-          <strong>Recordatorio:</strong> si algo no te sale, vuelve a la carpeta <code>teoria/</code> y repasa el Tema 3.
-        </div>
-        <div class="small text-secondary">
-          Hecho por Enrique Feria &amp; Pedro Vila · Curso Desarrollo de Sistemas Web
-        </div>
-      </div>
+    <footer>
+      <p>Tema 2 · Desarrollo de Sistemas Web — Ejercicio guiado para Enrique Feria y Pedro Vila.</p>
+      <p>
+        Si necesitas repasar la teoría, abre la carpeta <code>teoria/module02.pdf</code> y revisa los apartados de jerarquía
+        visual y maquetación responsive.
+      </p>
     </footer>
   </body>
 </html>

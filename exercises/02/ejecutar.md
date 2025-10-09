@@ -1,18 +1,18 @@
 # Cómo ejecutar el ejercicio 02
 
-El ejercicio 02 es una página HTML estática. Puedes visualizarla de dos formas:
+El ejercicio 02 sigue siendo una página HTML estática. No necesita dependencias externas ni servidores especiales.
 
-1. **Abrir el archivo directamente**
-   - Ubícate en la raíz del repositorio y abre `exercises/02/index.html` con tu navegador favorito.
+1. **Abrir directamente el archivo**
+   - Desde la raíz del repositorio, abre `exercises/02/index.html` en tu navegador.
 
-2. **Levantar un servidor estático opcional (recomendado para trabajar con CDNs)**
-   - Si tienes `npm` instalado, puedes usar `npx serve` u otra herramienta similar:
+2. **Usar un servidor estático opcional**
+   - Si prefieres trabajar con recarga automática, puedes levantar un servidor local con cualquier herramienta sencilla:
 
 ```bash
 cd exercises/02
-npx serve .
+python -m http.server 8000
 ```
 
-   - El comando imprimirá la URL local (habitualmente `http://localhost:3000/`). Visítala en el navegador.
+   - Después visita `http://localhost:8000/` en tu navegador.
 
-Recuerda mantener conexión a Internet para que se carguen correctamente las bibliotecas externas utilizadas (Bootstrap, Google Fonts, Animate.css y Bootstrap Icons).
+Recuerda que todo el estilo está embebido en el propio documento, así que no necesitas conexión a Internet para verlo correctamente.
