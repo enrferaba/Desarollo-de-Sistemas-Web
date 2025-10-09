@@ -1,5 +1,348 @@
-<!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><title>Exercise 02</title></head>
-<body><h1>Hello, 02</h1></body>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tema 3 · Ejercicio 03 | Plan del equipo front-end</title>
+
+    <!-- Fuentes y bibliotecas externas trabajadas en clase -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      integrity="sha512-V0bM8Vc5xSMCfUoGboGUz4ET5czIfhUui3K0pEwAiRJ8QIx8WTx2DhP4ZBGj9FK9Q4nR94mM5Vd8Ga5sM2V0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      integrity="sha384-Vn0ZC1XUd5wNjq88FbjVSTnZCzzniA4jznmGQ3G3i3wPtBYVBANjFuAoQ0P5R6Ay"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      :root {
+        --color-principal: #0b3d91;
+        --color-secundario: #ff6b6b;
+        --color-fondo: #f5f7fb;
+      }
+
+      body {
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--color-fondo);
+        color: #1f2933;
+      }
+
+      code,
+      pre {
+        font-family: "Fira Code", "Courier New", monospace;
+      }
+
+      .encabezado {
+        background: linear-gradient(135deg, rgba(11, 61, 145, 0.9), rgba(255, 107, 107, 0.8));
+      }
+
+      .etiqueta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+      }
+
+      .paso::marker {
+        color: var(--color-principal);
+        font-weight: 600;
+      }
+
+      .nota-profesor {
+        border-left: 4px solid var(--color-secundario);
+        background: #fff;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      }
+
+      .tarjeta-equipo {
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+      }
+
+      .tarjeta-equipo img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .tabla-bibliotecas tbody tr {
+        transition: transform 200ms ease, box-shadow 200ms ease;
+      }
+
+      .tabla-bibliotecas tbody tr:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+      }
+
+      .checklist .list-group-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      footer {
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="encabezado text-white py-5 shadow-sm">
+      <div class="container-lg">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <span class="etiqueta animate__animated animate__fadeInDown"><i class="bi bi-journal-code"></i> Tema 3 · Ejercicio 03</span>
+            <h1 class="display-5 fw-bold mt-3 animate__animated animate__fadeInLeft">
+              Plan de trabajo del equipo front-end (Enrique Feria &amp; Pedro Vila)
+            </h1>
+            <p class="fs-5 mt-3 animate__animated animate__fadeInUp animate__delay-1s">
+              Este documento sigue la estructura del material de clase: partimos de los objetivos, fijamos las bibliotecas que
+              el profesor nos pidió practicar y cerramos con un prototipo sencillo reutilizando la maqueta del ejercicio 01.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end text-center animate__animated animate__zoomIn animate__delay-1s">
+            <i class="bi bi-easel2-fill display-1"></i>
+            <p class="mt-3 mb-0 fw-semibold">Versión guía para principiantes</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container-lg py-5">
+      <section class="mb-5">
+        <h2 class="h4 text-uppercase text-primary fw-bold">1. Objetivo didáctico</h2>
+        <p>
+          Comprender cómo organizar el entregable del <strong>Tema 3 · Ejercicio 03</strong>: describimos al equipo de trabajo,
+          definimos el plan de aprendizaje y demostramos el uso de bibliotecas externas en un prototipo estático.
+        </p>
+        <div class="nota-profesor rounded-4 p-4 mt-4">
+          <h3 class="h5 fw-semibold"><i class="bi bi-lightbulb"></i> Nota del profesor</h3>
+          <p class="mb-2">
+            «Reutilizad el HTML del ejercicio anterior y añadid las bibliotecas nuevas. No hace falta complicarse, pero sí dejar
+            claro qué problema resuelve cada herramienta».
+          </p>
+          <p class="mb-0 small text-secondary">Recuerda: siempre puedes volver a los apuntes en la carpeta <code>teoria/</code>.</p>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 text-uppercase text-primary fw-bold">2. Bibliotecas que practicamos</h2>
+        <p>
+          Igual que en clase, las enlazamos mediante CDNs para no instalar nada. Mantén conexión a Internet cuando abras la
+          página.
+        </p>
+        <div class="table-responsive rounded-4 shadow-sm">
+          <table class="table table-hover align-middle mb-0 tabla-bibliotecas">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Biblioteca</th>
+                <th scope="col">¿Para qué la usamos?</th>
+                <th scope="col">CDN</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <th scope="row"><i class="bi bi-bootstrap-fill text-primary"></i> Bootstrap 5</th>
+                <td>Estructurar la cuadrícula, tarjetas y tablas sin escribir CSS desde cero.</td>
+                <td><code>cdn.jsdelivr.net/npm/bootstrap</code></td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="bi bi-type"></i> Google Fonts</th>
+                <td>Aplicar las tipografías <em>Poppins</em> y <em>Fira Code</em> tal como aparece en los apuntes.</td>
+                <td><code>fonts.googleapis.com</code></td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="bi bi-stars text-warning"></i> Animate.css</th>
+                <td>Dar animaciones suaves al entrar el contenido (presentación del plan).</td>
+                <td><code>cdnjs.cloudflare.com/ajax/libs/animate.css</code></td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="bi bi-emoji-smile"></i> Bootstrap Icons</th>
+                <td>Incorporar iconos explicativos en encabezados y listas.</td>
+                <td><code>cdn.jsdelivr.net/npm/bootstrap-icons</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 text-uppercase text-primary fw-bold">3. Estructura base reutilizada</h2>
+        <p>
+          Partimos del <strong>header → main → footer</strong> del ejercicio 01. A continuación mostramos la versión resumida del
+          HTML base para que la puedas comparar con tus apuntes.
+        </p>
+        <pre class="bg-dark text-white rounded-4 p-4 shadow-sm"><code>&lt;header&gt; Presentación del equipo &lt;/header&gt;
+&lt;main&gt;
+  &lt;section&gt; Objetivos y roles &lt;/section&gt;
+  &lt;section&gt; Plan de aprendizaje &lt;/section&gt;
+  &lt;section&gt; Recursos y enlaces &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt; Contacto y recordatorios &lt;/footer&gt;</code></pre>
+        <p class="mt-3">
+          Sobre este esqueleto añadimos componentes de Bootstrap para maquetar columnas y tarjetas. Esto facilita centrarnos en
+          el contenido pedagógico.
+        </p>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 text-uppercase text-primary fw-bold">4. Desarrollo paso a paso</h2>
+        <ol class="ps-3">
+          <li class="paso mb-3">
+            <strong>Analizar la teoría.</strong> Revisa el Tema 3 y localiza el apartado «Exercise 03». Resume los puntos clave
+            (roles del equipo, fases y entregables).
+          </li>
+          <li class="paso mb-3">
+            <strong>Importar bibliotecas.</strong> Copia las etiquetas <code>&lt;link&gt;</code> del bloque anterior en el
+            <code>&lt;head&gt;</code>.
+          </li>
+          <li class="paso mb-3">
+            <strong>Maquetar el contenido.</strong> Usa contenedores <code>.container</code> y el sistema de columnas de Bootstrap
+            para organizar la información en filas.
+          </li>
+          <li class="paso mb-3">
+            <strong>Dar estilo mínimo.</strong> Añade variables CSS en <code>:root</code> como hicimos en clase para definir colores
+            coherentes.
+          </li>
+          <li class="paso">
+            <strong>Revisar accesibilidad.</strong> Comprueba que las imágenes tengan <code>alt</code>, que los encabezados sigan un
+            orden lógico y que el contraste sea alto.
+          </li>
+        </ol>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 text-uppercase text-primary fw-bold">5. Prototipo del equipo</h2>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <article class="card tarjeta-equipo h-100">
+              <div class="card-body p-4">
+                <div class="d-flex flex-column flex-sm-row align-items-center gap-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=300&q=80"
+                    alt="Integrante del equipo trabajando en un portátil"
+                    class="rounded-circle border border-4 border-white shadow"
+                  />
+                  <div>
+                    <h3 class="h5 fw-bold mb-1">Enrique Feria</h3>
+                    <p class="text-secondary mb-2">Líder de maquetación</p>
+                    <ul class="list-unstyled small mb-0">
+                      <li><i class="bi bi-check-circle text-success"></i> Se encarga de HTML semántico.</li>
+                      <li><i class="bi bi-check-circle text-success"></i> Define la estructura responsive.</li>
+                      <li><i class="bi bi-check-circle text-success"></i> Supervisa el control de versiones.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="card tarjeta-equipo h-100">
+              <div class="card-body p-4">
+                <div class="d-flex flex-column flex-sm-row align-items-center gap-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80"
+                    alt="Integrante del equipo revisando notas"
+                    class="rounded-circle border border-4 border-white shadow"
+                  />
+                  <div>
+                    <h3 class="h5 fw-bold mb-1">Pedro Vila</h3>
+                    <p class="text-secondary mb-2">Responsable de investigación</p>
+                    <ul class="list-unstyled small mb-0">
+                      <li><i class="bi bi-check-circle text-success"></i> Documenta bibliotecas y recursos.</li>
+                      <li><i class="bi bi-check-circle text-success"></i> Redacta el plan de aprendizaje.</li>
+                      <li><i class="bi bi-check-circle text-success"></i> Prepara las demos para clase.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 text-uppercase text-primary fw-bold">6. Plan de aprendizaje</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="p-4 rounded-4 shadow-sm bg-white h-100">
+              <h3 class="h5 fw-semibold"><i class="bi bi-calendar-check"></i> Cronograma semanal</h3>
+              <ul class="list-unstyled mb-0 small">
+                <li><strong>Lunes:</strong> Repaso de teoría y planificación (45&nbsp;min).</li>
+                <li><strong>Miércoles:</strong> Práctica con componentes de Bootstrap (60&nbsp;min).</li>
+                <li><strong>Viernes:</strong> Correcciones y subida al repositorio (30&nbsp;min).</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-4 rounded-4 shadow-sm bg-white h-100">
+              <h3 class="h5 fw-semibold"><i class="bi bi-journal-check"></i> Evidencias</h3>
+              <p class="small mb-2">Para entregar en clase:</p>
+              <ul class="small mb-0">
+                <li>HTML validado con encabezados ordenados.</li>
+                <li>Lista de bibliotecas y enlaces de referencia.</li>
+                <li>Captura de pantalla del prototipo en escritorio y móvil.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 text-uppercase text-primary fw-bold">7. Checklist final antes de entregar</h2>
+        <ul class="list-group list-group-flush rounded-4 shadow-sm checklist">
+          <li class="list-group-item">
+            <i class="bi bi-clipboard-check text-success"></i>
+            He enlazado todas las bibliotecas y comprobado que se cargan en el navegador.
+          </li>
+          <li class="list-group-item">
+            <i class="bi bi-clipboard-check text-success"></i>
+            El contenido explica claramente roles, plan de aprendizaje y bibliotecas como en los apuntes.
+          </li>
+          <li class="list-group-item">
+            <i class="bi bi-clipboard-check text-success"></i>
+            El código está indentado y con etiquetas semánticas.
+          </li>
+          <li class="list-group-item">
+            <i class="bi bi-clipboard-check text-success"></i>
+            Guardé el archivo y lo subí al repositorio con un mensaje de commit descriptivo.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="py-4 mt-5">
+      <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div>
+          <strong>Recordatorio:</strong> si algo no te sale, vuelve a la carpeta <code>teoria/</code> y repasa el Tema 3.
+        </div>
+        <div class="small text-secondary">
+          Hecho por Enrique Feria &amp; Pedro Vila · Curso Desarrollo de Sistemas Web
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
