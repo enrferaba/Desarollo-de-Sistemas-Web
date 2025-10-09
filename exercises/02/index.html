@@ -1,5 +1,298 @@
-<!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><title>Exercise 02</title></head>
-<body><h1>Hello, 02</h1></body>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 2 · Ejercicio 02 | Hoja de estilos base</title>
+    <style>
+      :root {
+        --color-fondo: #f3f4f6;
+        --color-primario: #1f2937;
+        --color-secundario: #2563eb;
+        --color-resalte: #fbbf24;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+        color: var(--color-primario);
+        background: var(--color-fondo);
+        line-height: 1.6;
+      }
+
+      header {
+        background: linear-gradient(135deg, #1f2937, #111827);
+        color: white;
+        padding: 3rem 1.5rem;
+      }
+
+      .contenedor {
+        width: min(960px, 90vw);
+        margin: 0 auto;
+      }
+
+      .etiqueta {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin-top: 1rem;
+        font-size: clamp(2rem, 4vw, 2.75rem);
+      }
+
+      main {
+        padding: 3rem 1.5rem 4rem;
+      }
+
+      section {
+        background: white;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        border-radius: 1.25rem;
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+      }
+
+      section h2 {
+        margin-top: 0;
+        color: var(--color-secundario);
+        font-size: 1.4rem;
+      }
+
+      section p {
+        margin-bottom: 1rem;
+      }
+
+      ul,
+      ol {
+        padding-left: 1.25rem;
+      }
+
+      ul li,
+      ol li {
+        margin-bottom: 0.5rem;
+      }
+
+      .nota-profesor {
+        border-left: 4px solid var(--color-resalte);
+        background: #fff8e6;
+        padding: 1.25rem;
+        border-radius: 1rem;
+      }
+
+      .paleta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      .color {
+        border-radius: 1rem;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+        background: #f9fafb;
+      }
+
+      .color span {
+        display: block;
+        padding: 1rem;
+        font-weight: 600;
+      }
+
+      .color strong {
+        display: block;
+        font-size: 0.85rem;
+        margin-top: 0.25rem;
+        font-weight: 500;
+        color: #4b5563;
+      }
+
+      pre {
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        overflow-x: auto;
+      }
+
+      code {
+        font-family: "Fira Code", "Courier New", monospace;
+        font-size: 0.95rem;
+      }
+
+      .grid-ejemplo {
+        display: grid;
+        gap: 1rem;
+        margin: 1.5rem 0 0;
+      }
+
+      .grid-ejemplo article {
+        background: #eff6ff;
+        border-radius: 1rem;
+        padding: 1.25rem;
+        border: 1px solid #bfdbfe;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem 1.5rem 3rem;
+        color: #6b7280;
+        font-size: 0.95rem;
+      }
+
+      @media (min-width: 768px) {
+        .grid-ejemplo {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="contenedor">
+        <span class="etiqueta">Tema 2 · Ejercicio 02</span>
+        <h1>Hoja de estilos base para nuestra página de perfil</h1>
+        <p>
+          Seguimos exactamente el guion de clase: reutilizamos el HTML del ejercicio 01 y añadimos la capa de estilos que el
+          profesor explicó en el Tema 2 para practicar selectores, cajas flexibles y jerarquía visual.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <div class="contenedor">
+        <section>
+          <h2>1. Qué pide el enunciado</h2>
+          <p>
+            El objetivo es transformar la página de presentación del ejercicio 01 en una maqueta cuidada aplicando los
+            fundamentos de CSS vistos en el Tema 2:
+          </p>
+          <ul>
+            <li>Crear una hoja de estilos que defina tipografía, colores base y espaciados consistentes.</li>
+            <li>Organizar el contenido principal con un contenedor centrado y secciones bien diferenciadas.</li>
+            <li>Utilizar <strong>Flexbox o Grid sencillo</strong> para distribuir bloques como intereses o datos de contacto.</li>
+            <li>Respetar la semántica del HTML original (cabecera, secciones, pie de página) sin añadir scripts.</li>
+          </ul>
+          <div class="nota-profesor">
+            <strong>Recordatorio del profesor:</strong> «No hace falta inventar nada nuevo. Copiad el HTML del ejercicio 01,
+            enlazad vuestro CSS y comprobad que el diseño se adapta a móvil y escritorio ajustando márgenes y tamaños de
+            letra.»
+          </div>
+        </section>
+
+        <section>
+          <h2>2. Paso a paso recomendado en clase</h2>
+          <ol>
+            <li>Crear un archivo <code>style.css</code> (o usar un bloque <code>&lt;style&gt;</code> como en este ejemplo).</li>
+            <li>Definir colores y tipografías globales con variables CSS para mantener coherencia.</li>
+            <li>Añadir un contenedor central con <code>max-width</code> y márgenes automáticos.</li>
+            <li>Aplicar <code>display: flex</code> o <code>grid</code> a las secciones que contengan listas o tarjetas.</li>
+            <li>Usar <code>@media queries</code> sencillas para mejorar la lectura en pantallas grandes.</li>
+            <li>Revisar contraste, jerarquía de titulares y espaciados antes de entregar.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>3. Guía visual y paleta propuesta</h2>
+          <p>
+            Puedes seguir esta referencia de colores y estructura para mantener el estilo uniforme con el resto del equipo.
+          </p>
+          <div class="paleta">
+            <div class="color">
+              <span style="background: #1f2937; color: #f9fafb">#1F2937</span>
+              <strong>Cabeceras y textos fuertes</strong>
+            </div>
+            <div class="color">
+              <span style="background: #2563eb; color: #e0f2fe">#2563EB</span>
+              <strong>Enlaces y acentos</strong>
+            </div>
+            <div class="color">
+              <span style="background: #fbbf24; color: #1f2937">#FBBF24</span>
+              <strong>Notas y llamadas de atención</strong>
+            </div>
+            <div class="color">
+              <span style="background: #f3f4f6; color: #1f2937">#F3F4F6</span>
+              <strong>Fondo general</strong>
+            </div>
+          </div>
+          <div class="grid-ejemplo">
+            <article>
+              <h3>Cabecera</h3>
+              <p>Incluye el título principal y una breve descripción. Usa un fondo oscuro y texto claro.</p>
+            </article>
+            <article>
+              <h3>Sección "Sobre nosotros"</h3>
+              <p>Combina imagen y texto. Puedes usar <code>display: grid</code> con dos columnas a partir de 768px.</p>
+            </article>
+            <article>
+              <h3>Lista de intereses</h3>
+              <p>Transforma la lista en tarjetas con bordes suaves para que cada punto destaque.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>4. Ejemplo de código explicado en clase</h2>
+          <p>
+            Este fragmento resume las propiedades clave que deberías tener en tu hoja de estilos. Adáptalo a tus propios
+            colores y tamaños.
+          </p>
+          <pre><code>body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
+  margin: 0;
+}
+
+main section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.intereses {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .intereses {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</code></pre>
+        </section>
+
+        <section>
+          <h2>5. Checklist antes de entregar</h2>
+          <ul>
+            <li>La página se sigue viendo bien al reducir la ventana por debajo de 480px.</li>
+            <li>Los encabezados mantienen la jerarquía <code>h1</code> → <code>h2</code> → <code>h3</code>.</li>
+            <li>Los colores tienen contraste suficiente (usa la herramienta recomendada en clase si dudas).</li>
+            <li>No hay estilos inline que rompan la consistencia con el resto del equipo.</li>
+            <li>El archivo está guardado en <code>exercises/02/index.html</code> y enlaza correctamente la hoja de estilos.</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>Tema 2 · Desarrollo de Sistemas Web — Ejercicio guiado para Enrique Feria y Pedro Vila.</p>
+      <p>
+        Si necesitas repasar la teoría, abre la carpeta <code>teoria/module02.pdf</code> y revisa los apartados de jerarquía
+        visual y maquetación responsive.
+      </p>
+    </footer>
+  </body>
 </html>
